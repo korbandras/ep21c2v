@@ -1,3 +1,5 @@
+import bolt
+
 class Kosar:
     """
     Egyetlen vásárlás adatait kezelő osztály.
@@ -11,7 +13,8 @@ class Kosar:
         """
         A kosár létrehozásakor beállítja az osztály attribútumait.
         """
-        pass
+        self.termekek=termekek
+
 
     def osszeg_lekerdezese(self) -> int:
         """
@@ -19,7 +22,8 @@ class Kosar:
 
         :return: A vásárlás összege Ft-ban.
         """
-        pass
+        for i in self.termekek:
+            print('ok')
 
     def termekek_lekerdezese(self) -> dict[str, int]:
         """
@@ -44,10 +48,46 @@ class Kosar:
         :param arucikk: A vizsgált árucikk neve.
         :return: A vizsgált árucikk mennyisége a kosárban.
         """
-        pass
+        for i in range(len(kosarak)):
+            if kosarak[i]==sorszam:
+                print("%d árúcikk volt a kosárban" %len(kosarak[i]))
+                colostok=0
+                toll=0
+                HB_ceruza=0
+                szatyor=0
+                csavarkulcs=0
+                doboz=0
+                filctoll=0
+                kefe=0
+                ceruzaelem=0
+                for elem in kosarak[i]:
+                    if elem=="colostok":
+                        colostok+=1
+                    elif elem=="toll":
+                        toll+=1
+                    elif elem=="filctoll":
+                        filctoll+=1
+                    elif elem=="HB ceruza":
+                        HB_ceruza+=1
+                    elif elem=="szatyor":
+                        szatyor+=1
+                    elif elem=="csavarkulcs":
+                        csavarkulcs+=1
+                    elif elem=="doboz":
+                        doboz+=1
+                    elif elem=="kefe":
+                        kefe+=1
+                    elif elem=="ceruzaelem":
+                        ceruzaelem+=1
+        print("%d colostok, %d toll, %d HB ceruza, %d szatyor, %d csavarkulcs, %d doboz, %d filctoll,"
+              "%d kefe és %d ceruzaelem van a megadott kosárban" % (
+              colostok, toll, HB_ceruza, szatyor, csavarkulcs, doboz, filctoll, kefe, ceruzaelem))
 
     def kosar_tartalmanak_kiiratasa(self) -> None:
         """
         Kiírja a kosár tartalmát a konzolra.
         """
-        pass
+        for i in kosarak:
+            if kosarak[i]==sorszam:
+                print(kosarak[i])
+
